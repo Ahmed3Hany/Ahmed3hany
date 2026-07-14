@@ -1,0 +1,67 @@
+/* ========================================================== Responsive refinements ========================================================== */
+@media (max-width:991.98px){.navbar{background:var(--nav);backdrop-filter:blur(15px);border-bottom:1px solid var(--line);padding:10px 0}.navbar-collapse{padding:13px 0 5px}.navbar-nav{align-items:flex-start!important}.nav-link{padding:.6rem 0!important}.nav-link::after{left:0}.nav-link.active::after,.nav-link:hover::after{width:26px}.theme-toggle{margin-top:8px}.hero{padding-top:110px;padding-bottom:95px}.hero-visual{max-width:390px}.hero-title br{display:none}.scroll-cue{display:none}.section-padding{padding:90px 0}.project-image{height:220px}}
+@media (max-width:575.98px){.section-padding{padding:72px 0}.hero{min-height:auto}.hero-title{font-size:2.85rem}.hero-copy{font-size:1rem}.profile-frame{width:69%}.floating-badge{font-size:.68rem;padding:7px 9px}.badge-code{right:-3%}.badge-idea{left:-3%}.section-title{font-size:2.25rem}.stat-card{padding:23px}.skill-card{height:165px}.skill-front i{font-size:2.1rem}.project-image{height:205px}.certificate-card img{height:190px}.footer-main{flex-direction:column;text-align:center}.footer-social{order:3}.footer-main p{order:2}.back-to-top{right:15px;bottom:15px}.contact-wrap{padding:25px 19px}.carousel-caption h3{font-size:1.25rem}}
+@media (min-width:1600px){.container{max-width:1400px}.hero-visual{max-width:520px}.section-padding{padding:140px 0}}
+
+/* Slightly larger hero portrait while preserving the surrounding orbit layout. */
+.hero-visual{width:min(100%,560px)}
+.profile-frame{width:88%}
+@media (max-width:575.98px){.profile-frame{width:84%}}
+
+/* ========================================================== Premium navigation refinements ========================================================== */
+@media (min-width:992px){
+  .navbar.scrolled .container{padding:7px 12px 7px 20px;background:var(--nav);border:1px solid var(--line);border-radius:16px;box-shadow:0 15px 40px rgba(0,0,0,.15);backdrop-filter:blur(18px)}
+  .navbar.scrolled{padding:12px 0;background:transparent;box-shadow:none;border:0}
+}
+.nav-link{border-radius:8px;transition:color .25s,background .25s,transform .25s}
+.nav-link:hover{background:var(--surface-2);transform:translateY(-1px)}
+.nav-link.active{background:rgba(124,108,255,.13);color:var(--text)}
+.nav-link::after{display:none}
+.nav-link.active::before{content:"";display:inline-block;width:5px;height:5px;margin:0 6px 2px 0;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+.nav-link.active{font-weight:700;box-shadow:inset 0 0 0 1px rgba(124,108,255,.14)}
+@media (max-width:991.98px){
+  .navbar-collapse{margin-top:10px;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:var(--shadow)}
+  .nav-link{padding:.7rem .8rem!important}
+  .nav-link.active::before{margin-left:1px}
+  .theme-toggle{margin:10px 0 2px 8px}
+}
+
+/* Dark-mode navbar contrast: kept separate so the light palette remains clean. */
+body:not(.light-theme) .navbar.scrolled .container{background:rgba(10,20,36,.94);border-color:rgba(163,190,255,.18);box-shadow:0 16px 45px rgba(0,0,0,.38)}
+body:not(.light-theme) .navbar.scrolled{background:rgba(8,17,31,.96);border-bottom-color:rgba(163,190,255,.13)}
+body:not(.light-theme) .nav-link{color:#aebbd0}
+body:not(.light-theme) .nav-link:hover{color:#ffffff;background:rgba(255,255,255,.08)}
+body:not(.light-theme) .nav-link.active{color:#ffffff;background:rgba(124,108,255,.25);box-shadow:inset 0 0 0 1px rgba(167,157,255,.18)}
+body:not(.light-theme) .theme-toggle{background:#101f34;border-color:rgba(163,190,255,.2);color:#f1f6ff}
+@media (max-width:991.98px){body:not(.light-theme) .navbar-collapse{background:#0e1a2d;border-color:rgba(163,190,255,.17)}}
+
+/* Brand logo: the mark rotates independently while the name stays readable. */
+.navbar-brand{display:inline-flex;align-items:center;gap:9px;letter-spacing:0!important}
+.navbar-brand .brand-logo{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--primary));color:#fff;font:800 .72rem Manrope,sans-serif;letter-spacing:-.06em;box-shadow:0 7px 18px rgba(124,108,255,.3);transition:transform .65s cubic-bezier(.2,.8,.2,1)}
+.navbar-brand .brand-name{font:800 .97rem Manrope,sans-serif;letter-spacing:-.04em;color:var(--text)}
+.navbar-brand:hover .brand-logo{transform:rotate(360deg)}
+
+/* Certificate display controls and full-size image viewer. */
+.certificate-mode-switch{display:flex;justify-content:center;gap:6px;margin:30px auto 0;padding:5px;width:max-content;max-width:100%;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+.certificate-mode-switch button{border:0;border-radius:8px;padding:9px 14px;background:transparent;color:var(--muted);font-size:.8rem;font-weight:700;transition:.25s}
+.certificate-mode-switch button.active,.certificate-mode-switch button:hover{background:var(--primary);color:#fff;box-shadow:0 7px 16px rgba(124,108,255,.24)}
+.certificate-card img{cursor:zoom-in}.certificate-card img:hover{filter:brightness(1.08)}
+.certificate-modal .modal-content{background:var(--surface);border:1px solid var(--line);border-radius:15px;color:var(--text)}
+.certificate-modal .modal-header{border-color:var(--line)}.certificate-modal .btn-close{filter:var(--modal-close-filter, invert(1))}body.light-theme .certificate-modal .btn-close{filter:none}
+.certificate-modal .modal-body{padding:12px}.certificate-modal img{display:block;width:100%;max-height:78vh;object-fit:contain;border-radius:9px}
+
+/* Keep every project card balanced, even when descriptions and tag counts differ. */
+.project-card{display:flex;flex-direction:column}.project-card .project-body{display:flex;flex:1;flex-direction:column}.project-card .text-link{margin-top:auto}.project-card .tech-tags{min-height:29px}
+
+/* Uniform media sizing: projects stay visually consistent; certificates retain their full document. */
+.project-image{height:auto;aspect-ratio:16/10;background:var(--surface-2)}
+.project-image img{aspect-ratio:16/10;object-fit:cover}
+.certificate-card img{height:auto;aspect-ratio:4/3;object-fit:contain;background:var(--surface-2);padding:7px}
+.certificate-slideshow .carousel-item img{height:min(62vw,620px);object-fit:contain;background:var(--surface-2)}
+@media (max-width:575.98px){.project-image,.project-image img{aspect-ratio:16/11}.certificate-card img{aspect-ratio:4/3}}
+
+/* ========================================================== Consistent active / focus feedback for every interactive control ========================================================== */
+:where(button,.btn,.nav-link,.text-link,.social-links a,.back-to-top,.certificate-mode-switch button,.certificate-filters button):focus-visible{outline:3px solid rgba(72,215,197,.7);outline-offset:3px}
+:where(button,.btn,.nav-link,.text-link,.social-links a,.back-to-top,.certificate-mode-switch button,.certificate-filters button){-webkit-tap-highlight-color:transparent}
+:where(button,.btn,.nav-link,.text-link,.social-links a,.back-to-top,.certificate-mode-switch button,.certificate-filters button):active{transform:translateY(1px) scale(.97);transition-duration:.08s}
+.btn-primary:active{background:#5549d8!important;box-shadow:inset 0 3px 8px rgba(0,0,0,.24)!important}.btn-outline-custom:active{background:var(--surface-2)!important;border-color:var(--accent)!important}.nav-link.active:active,.certificate-mode-switch button.active:active,.certificate-filters button.active:active{transform:translateY(1px) scale(.98)}
